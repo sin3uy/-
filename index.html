@@ -38,16 +38,17 @@ body {
     justify-content: center;
     gap: 15px;
     background: rgba(255, 255, 255, 0.1);
-    padding: 10px 20px;
+    padding: 5px 15px; /* Reduced padding */
     border-radius: 30px;
     margin: 0 auto;
     width: fit-content;
+    height: 60px; /* Fixed height */
 }
 
 .logo-container {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 45px; /* Reduced size */
+    height: 45px; /* Reduced size */
 }
 
 .logo-image {
@@ -60,25 +61,29 @@ body {
 
 .status-indicator {
     position: absolute;
-    bottom: 5px;
-    left: 5px;
+    bottom: 3px;
+    left: 3px;
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    border: 2px solid white;
 }
 
 .store-name {
     color: #fff;
-    font-size: 1.8rem;
+    font-size: 1.4rem; /* Reduced font size */
     font-weight: bold;
 }
 
 header {
     background: #16213e;
-    padding: 20px;
+    padding: 10px; /* Reduced padding */
     text-align: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: fixed; /* Make header fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100; /* Ensure header stays above other content */
 }
 
 header h1 {
@@ -87,8 +92,10 @@ header h1 {
 }
 
 main {
+    margin-top: 80px; /* Add top margin to account for fixed header */
     max-width: 1200px;
-    margin: 20px auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -528,6 +535,15 @@ th {
     font-size: 0.9em;
     padding: 5px 10px;
     border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.admin-role svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
 }
 
 .admin-role.gold {
@@ -665,20 +681,20 @@ th {
 
 .burger-menu {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background: rgba(0, 180, 216, 0.1);
-    border: 1px solid rgba(0, 180, 216, 0.3);
-    border-radius: 50%;
+    top: 12px; /* Center vertically within header */
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    border-radius: 0; /* Remove border radius */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 6px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1001;
     padding: 8px;
 }
 
@@ -719,22 +735,32 @@ th {
 }
 
 .side-nav-button {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    background: rgba(0, 180, 216, 0.1);
-    border: 1px solid rgba(0, 180, 216, 0.3);
-    color: #00b4d8;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    text-align: right;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    padding: 15px !important;
+    margin: 10px 0 !important;
+    background: rgba(0, 180, 216, 0.1) !important;
+    border: 1px solid rgba(0, 180, 216, 0.3) !important;
+    color: #00b4d8 !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+    font-size: 1.1rem !important;
+    transition: all 0.3s ease !important;
+    text-align: right !important;
+    min-width: unset !important;
+}
+
+.side-nav-button svg {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
 }
 
 .side-nav-button:hover {
-    background: rgba(0, 180, 216, 0.2);
-    transform: translateX(-5px);
+    background: rgba(0, 180, 216, 0.2) !important;
+    transform: translateX(-5px) !important;
 }
 
 .side-nav-overlay {
@@ -755,35 +781,190 @@ th {
     visibility: visible;
 }
 
+.tutorial-modal {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 15px;
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 180, 216, 0.2);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.tutorial-description {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close-tutorial-btn {
+    background: #16213e;
+    color: #00b4d8;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.close-tutorial-btn:hover {
+    background: rgba(0, 180, 216, 0.1);
+    transform: translateY(-2px);
+}
+
+.work-hours-modal {
+    text-align: center;
+    padding: 20px;
+}
+
+.work-hours-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.work-hours-card {
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+}
+
+.work-hours-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: #00b4d8;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.work-hours-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.time-slot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 15px 0;
+}
+
+.time-slot.active {
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.time-slot.inactive {
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.time-slot .time {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.time-slot .status {
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    margin-right: 15px;
+}
+
+.time-slot.active .status {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+.time-slot.inactive .status {
+    background: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+}
+
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    .header-container {
-        padding: 8px 15px;
-    }
-    
-    .logo-container {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .store-name {
-        font-size: 1.5rem;
-    }
-    
+    /* Update product card styling for mobile */
     .product-card {
-        width: 95%;
-        margin: 0 auto;
+        width: calc(50% - 20px); /* Make cards take up half width minus gap */
+        margin: 10px; /* Add some margin */
+        padding: 15px; /* Reduce padding for smaller screens */
     }
-    
+
+    /* Adjust main content container */
     main {
         padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0; /* Remove gap since we're using margins */
+        margin-top: 80px; /* Keep space for fixed header */
     }
-    
-    button {
-        padding: 10px 20px;
+
+    /* Make sure images scale properly */
+    .product-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Adjust text sizes for better mobile display */
+    .product-card h2 {
+        font-size: 1rem;
+        margin: -20px auto 10px auto;
+    }
+
+    .product-card p {
+        font-size: 0.9rem;
+    }
+
+    .product-card button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        min-width: unset;
+        width: 90%;
+    }
+}
+
+/* Add additional breakpoint for very small screens */
+@media (max-width: 360px) {
+    .product-card {
+        width: calc(50% - 10px); /* Slightly adjust width for very small screens */
+        margin: 5px; /* Reduce margin */
+        padding: 10px; /* Reduce padding */
     }
 }
 
@@ -1196,6 +1377,162 @@ button[onclick="closeModal()"] {
     height: 32px;
     fill: white;
 }
+
+.supported-countries {
+    text-align: center;
+    padding: 20px;
+}
+
+.countries-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.country-card {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    transition: all 0.3s ease;
+}
+
+.country-flag {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.country-flag .flag {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.country-info {
+    text-align: right;
+    flex: 1;
+    margin-right: 15px;
+}
+
+.country-info h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.supported-badge {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.coming-soon-message {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(0, 180, 216, 0.05);
+}
+
+.coming-soon-message p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+.progress-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.progress-indicator .dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 180, 216, 0.5);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.progress-indicator .dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.progress-indicator .dot:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.close-countries-btn {
+    margin-top: 30px;
+    background: #16213e;
+    color: #00b4d8;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-countries-btn:hover {
+    background: rgba(0, 180, 216, 0.1);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .countries-container {
+        padding: 10px;
+    }
+    
+    .country-card {
+        padding: 12px 15px;
+    }
+    
+    .country-flag .flag {
+        font-size: 2rem;
+    }
+    
+    .country-info h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .supported-countries {
+        padding: 15px;
+    }
+    
+    .country-flag .flag {
+        font-size: 2rem;
+    }
+    
+    .country-info h3 {
+        font-size: 1rem;
+    }
+    
+    .supported-badge {
+        font-size: 0.8rem;
+    }
+}
+
+.version-info {
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    border-radius: 10px;
+    padding: 8px 15px;
+    color: #00b4d8;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 20px auto;
+}
 </style>
 </head>
 <body>
@@ -1224,10 +1561,63 @@ button[onclick="closeModal()"] {
 </div>
 
 <div class="side-nav">
-    <button class="side-nav-button" onclick="scrollToTop()">الصفحة الرئيسية</button>
-    <button class="side-nav-button" onclick="scrollToSection('top-buyers-section')">أفضل المشترين</button>
-    <button class="side-nav-button" onclick="scrollToSection('testimonials-section')">آراء العملاء</button>
-    <button class="side-nav-button" onclick="scrollToSection('admin-section')">إدارة الموقع</button>
+    <div class="version-info">
+        تحديث الموقع 0.2
+    </div>
+    <button class="side-nav-button" onclick="scrollToTop()">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        الصفحة الرئيسية
+    </button>
+    <button class="side-nav-button" onclick="scrollToSection('top-buyers-section')">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        أفضل المشترين
+    </button>
+    <button class="side-nav-button" onclick="scrollToSection('testimonials-section')">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        آراء العملاء
+    </button>
+    <button class="side-nav-button" onclick="scrollToSection('admin-section')">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 7h-9"></path>
+            <path d="M14 17H5"></path>
+            <circle cx="17" cy="17" r="3"></circle>
+            <circle cx="7" cy="7" r="3"></circle>
+        </svg>
+        إدارة الموقع
+    </button>
+    <button class="side-nav-button" onclick="showSupportedCountries()">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        الدول التي ندعمها
+    </button>
+    <button class="side-nav-button" onclick="showTutorial()">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        شرح الموقع
+    </button>
+    <button class="side-nav-button" onclick="showWorkHours()">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        مواعيد العمل
+    </button>
 </div>
 
 <div class="side-nav-overlay" onclick="toggleSideNav()"></div>
@@ -1343,9 +1733,9 @@ button[onclick="closeModal()"] {
     <h3 style="color: #00b4d8; margin-bottom: 20px; text-align: center;">أفضل المشترين</h3>
     <div class="top-buyers-container">
         <div class="buyer-card">
-            <img src="https://i.postimg.cc/FRNMNMM3/Screenshot-Whats-App.jpg" alt="احمد ابراهيم" class="buyer-avatar gold-border">
+            <img src="https://i.postimg.cc/G2y0nLhS/favourite.png" alt="محمد" class="buyer-avatar gold-border">
             <div class="buyer-info">
-                <span class="buyer-name">احمد ابراهيم</span>
+                <span class="buyer-name">محمد</span>
                 <span class="buyer-rank">#1 الأكثر شراءً</span>
             </div>
             <div class="buyer-badge" style="background: #ffd700;">
@@ -1354,9 +1744,9 @@ button[onclick="closeModal()"] {
         </div>
 
         <div class="buyer-card">
-            <img src="https://i.postimg.cc/13j9J3NX/Screenshot-Whats-App.jpg" alt="محمود" class="buyer-avatar silver-border">
+            <img src="https://i.postimg.cc/Hs2RDwF9/1000002001.jpg" alt="احمد" class="buyer-avatar silver-border">
             <div class="buyer-info">
-                <span class="buyer-name">محمود</span>
+                <span class="buyer-name">احمد</span>
                 <span class="buyer-rank">#2 متميز</span>
             </div>
             <div class="buyer-badge" style="background: #C0C0C0;">
@@ -1365,9 +1755,9 @@ button[onclick="closeModal()"] {
         </div>
 
         <div class="buyer-card">
-            <img src="https://i.postimg.cc/W3Y2dp60/Screenshot-Whats-App.jpg" alt="يوسف عاطف" class="buyer-avatar bronze-border">
+            <img src="https://i.postimg.cc/P5jpVrxB/channels4-profile.jpg" alt="شادي" class="buyer-avatar bronze-border">
             <div class="buyer-info">
-                <span class="buyer-name">يوسف عاطف</span>
+                <span class="buyer-name">شادي</span>
                 <span class="buyer-rank">#3 نشط</span>
             </div>
             <div class="buyer-badge" style="background: #CD7F32;">
@@ -1384,9 +1774,9 @@ button[onclick="closeModal()"] {
         </div>
 
         <div class="buyer-card">
-            <img src="https://i.postimg.cc/Hs2RDwF9/1000002001.jpg" alt="احمد" class="buyer-avatar">
+            <img src="https://i.postimg.cc/Hs2RDwF9/1000002001.jpg" alt="عمر" class="buyer-avatar">
             <div class="buyer-info">
-                <span class="buyer-name">احمد</span>
+                <span class="buyer-name">عمر</span>
                 <span class="buyer-rank">#5</span>
             </div>
         </div>
@@ -1409,44 +1799,17 @@ button[onclick="closeModal()"] {
             <div class="testimonials-container">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <img src="https://i.postimg.cc/W3Y2dp60/Screenshot-Whats-App.jpg" alt="يوسف عاطف" class="testimonial-avatar">
-                        <span class="testimonial-name">يوسف عاطف</span>
+                        <img src="https://i.postimg.cc/W4VJTBZ6/Screenshot-٢٠٢٤١١٢٤-٢١٤٣١٠-WhatsApp.jpg" alt="كريم" class="testimonial-avatar">
+                        <span class="testimonial-name">كريم</span>
                     </div>
                     <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">احسن موقع ثقه ♥🌹</p>
+                    <p class="testimonial-text">احسن متجر 👍</p>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <img src="https://i.postimg.cc/hvqfDtSM/Screenshot-Whats-App.jpg" alt="محمد بركات" class="testimonial-avatar">
-                        <span class="testimonial-name">محمد بركات</span>
-                    </div>
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">شحنت 30 شده وصلوني على طول 👍🏻</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://i.postimg.cc/FRNMNMM3/Screenshot-Whats-App.jpg" alt="احمد ابراهيم" class="testimonial-avatar">
-                        <span class="testimonial-name">احمد ابراهيم</span>
-                    </div>
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text"> ثقه يا يغالي 🤙♥</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://i.postimg.cc/fyrW3Ws6/Screenshot-Whats-App.jpg" alt="محمود" class="testimonial-avatar">
+                        <img src="https://i.postimg.cc/13j9J3NX/Screenshot-٢٠٢٤١١٢٤-١٧٥٨٢٩-WhatsApp.jpg" alt="محمود" class="testimonial-avatar">
                         <span class="testimonial-name">محمود</span>
-                    </div>
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">ممتاز ❤🫶</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://i.postimg.cc/Hs2RDwF9/1000002001.jpg" alt="احمد" class="testimonial-avatar">
-                        <span class="testimonial-name">احمد</span>
                     </div>
                     <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
                     <p class="testimonial-text">شكرا تم الشحن افضل متجر</p>
@@ -1467,7 +1830,19 @@ button[onclick="closeModal()"] {
                     </div>
                     <div class="admin-info">
                         <span class="admin-name">شادي</span>
-                        <span class="admin-role gold">مسؤول الموقع</span>
+                        <span class="admin-role gold">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            مسؤول الموقع
+                        </span>
+                        <span style="color: #fff; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            الفرع الرئيسي
+                        </span>
                     </div>
                 </div>
                 
@@ -1482,7 +1857,46 @@ button[onclick="closeModal()"] {
                     </div>
                     <div class="admin-info">
                         <span class="admin-name">محمود صابر</span>
-                        <span class="admin-role blue">مشرف الموقع</span>
+                        <span class="admin-role blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 6L9 17L4 12"/>
+                            </svg>
+                            مشرف الموقع
+                        </span>
+                        <span style="color: #fff; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            فرع بني سويف
+                        </span>
+                    </div>
+                </div>
+
+                <div class="admin-card" onclick="showAdminContact('كريم الداودي', '+201001064267')">
+                    <div class="admin-avatar-container">
+                        <img src="https://i.postimg.cc/4yGFRGBq/IMG-20241130-WA0055.jpg" alt="Moderator" class="admin-avatar">
+                        <div class="verification-badge blue">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="admin-info">
+                        <span class="admin-name">كريم الداودي</span>
+                        <span class="admin-role blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 6L9 17L4 12"/>
+                            </svg>
+                            مشرف الموقع
+                        </span>
+                        <span style="color: #fff; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            فرع دمياط
+                        </span>
                     </div>
                 </div>
             </div>
@@ -1490,49 +1904,56 @@ button[onclick="closeModal()"] {
         <div class="footer-social">
             <a href="https://t.me/sinauy" target="_blank" class="social-icon">
                 <svg viewBox="0 0 24 24">
-                    <path d="M22.05 1.577c-.393-.016-.784.08-1.117.235-.484.186-4.92 1.902-9.41 3.64-2.26.873-4.518 1.746-6.256 2.415-1.737.67-3.045 1.168-3.114 1.192-.46.16-1.082.362-1.61.984-.133.155-.267.354-.335.628s-.038.622.095.895c.265.547.714.773 1.244.976 1.76.564 3.58 1.102 5.087 1.608.556 1.96 1.09 3.927 1.618 5.89.174.394.553.54.944.544l-.002.02s.307.03.606-.042c.3-.07.677-.244 1.02-.565.377-.354 1.4-1.36 1.98-1.928l4.37 3.226.035.02s.484.34 1.192.388c.354.024.82-.044 1.22-.337.403-.294.67-.767.795-1.307.374-1.63 2.853-13.427 3.276-15.38l-.012.046c.296-1.1.187-2.108-.496-2.705-.342-.297-.736-.427-1.13-.444zm-.118 1.874c.027.025.025.025.002.027-.007-.002.08.118-.09.755l-.007.024-.005.022c-.432 1.997-2.936 13.9-3.27 15.356-.046.196-.065.182-.054.17-.1-.015-.285-.094-.3-.1l-7.48-5.525c2.562-2.467 5.182-4.7 7.827-7.08.468-.235.39-.96-.17-.972-.594.14-1.095.567-1.64.84-3.132 1.858-6.332 3.492-9.43 5.406-1.59-.553-3.177-1.012-4.767-1.572.1-.02.13-.037.35-.118.262-.097 2.146-.795 1.392-.513h.002c4.474-1.732 8.947-3.405 13.395-5.247.344-.13.638-.276.906-.368.767-.27 1.683-.4 2.075-.047.047.042.088.088.135.142zm-2.4 2.8c-1.788 1.647-3.624 3.25-5.403 4.91-1.078 1.005-2.125 2.042-3.188 3.063-.252.257-.4.61-.41.984-.012.373.114.74.356 1.01.96 1.06 2.1 1.857 3.135 2.785.298.27.618.497.924.738.337.27.738.52 1.07.775.348.267 1.002-.17 1.195-.438.193-.27.184-.555.225-.876.157-1.22.39-2.438.59-3.657.17-.998.328-2.022.527-3.01.133-.664.262-1.328.363-1.997.082-.537.144-1.078.228-1.608v-.022z"/>
-                </svg>
-            </a>
-            <a href="https://youtube.com/@sinauy7?si=IQrXInILBIOKUFPH" target="_blank" class="social-icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    <path d="M22.05 1.577c-.393-.016-.784.08-1.117.235-.484.186-4.92 1.902-9.41 3.64-2.26.873-4.518 1.746-6.256 2.415-1.737.67-3.045 1.168-3.114 1.192-.46.16-1.082.362-1.61.984-.133.155-.267.354-.335.628s-.038.622.095.895c.265.547.714.773 1.244.976 1.76.564 3.58 1.102 5.087 1.608.556 1.96 1.09 3.927 1.618 5.89.174.394.553.54.944.544l-.002.02s.307.03.606-.042c.3-.07.677-.244 1.02-.565.377-.354 1.4-1.36 1.98-1.928l4.37 3.226.035.02s.484.34 1.192.388c.354.024.82-.044 1.22-.337.403-.294.67-.767.795-1.307.374-1.63 2.853-13.427 3.276-15.38l-.012.046c.296-1.1.187-2.108-.496-2.705-.342-.297-.736-.427-1.13-.444zm-.118 1.874c.027.025.025.025.002.027-.007-.002.08.118-.09.755l-.007.024-.005.022c-.432 1.997-2.936 13.9-3.27 15.356-.046.196-.065.182-.054.17-.1-.015-.285-.094-.3-.1l-7.48-5.525c2.562-2.467 5.182-4.7 7.827-7.08.468-.235.39-.96-.17-.972-.594.14-1.095.567-1.64.84-3.132 1.858-6.332 3.492-9.43 5.406-1.59-.553-3.177-1.012-4.767-1.572.1-.02.13-.037.35-.118.262-.097 2.146-.795 1.392-.513h.002c4.474-1.732 8.947-3.405 13.395-5.247.344-.13.638-.276.906-.368.767-.27 1.683-.4 2.075-.047.047.042.088.088.135.142zm-2.4 2.8c-1.788 1.647-3.624 3.25-5.403 4.91-1.078 1.005-2.125 2.042-3.188 3.063-.252.257-.4.61-.41.984-.012.373.114.74.356 1.01.96 1.06 2.1 1.857 3.135 2.785.298.27.618.497.924.738.337.27.738.52 1.07.775.348.267 1.002-.17 1.195-.438.193-.27.184-.555.225-.876.157-.998.328-2.022.527-3.01.133-.664.262-1.328.363-1.997.082-.537.144-1.078.228-1.608v-.022z"/>
                 </svg>
             </a>
         </div>
-        <p class="footer-date">تم إنشاء المتجر بتاريخ 23-11-2024</p>
-        <a href="https://wa.me/+201009123031" target="_blank" class="footer-contact">
-            لشراء موقع حسب طلبك تواصل هنا
-        </a>
     </div>
+    <p class="footer-date">تم إنشاء المتجر بتاريخ 23-11-2024</p>
+    <a href="https://wa.me/+201009123031" target="_blank" class="footer-contact">
+        لشراء موقع حسب طلبك تواصل هنا
+    </a>
+</div>
 </footer>
 
 <a href="https://wa.me/+201009123031" target="_blank" class="whatsapp-float" title="تواصل معنا على واتساب">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M20.4 3.6C18.2 1.3 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.5 4.2 1.6 6.1L0 24l6-1.6c1.8 1 3.9 1.6 6 1.6 6.6 0 12-5.4 12-12 0-3.2-1.3-6.2-3.6-8.4zM12 22c-1.8 0-3.6-.5-5.2-1.4l-.4-.2-3.7 1 1-3.7-.2-.4C2.5 15.6 2 13.8 2 12 2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm5.5-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-1 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.2-.2.3-.3.5-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z" fill="white"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
     </svg>
 </a>
 
 <script>
+let hasSeenSplash = false;
+
 document.addEventListener('DOMContentLoaded', () => {
     const splashScreen = document.getElementById('splashScreen');
     const mainContent = document.querySelector('main');
     const header = document.querySelector('header');
 
-    // Hide main content initially
-    mainContent.style.display = 'none';
-    header.style.display = 'none';
+    if (!hasSeenSplash) {
+        // Hide main content initially
+        mainContent.style.display = 'none';
+        header.style.display = 'none';
 
-    // After 4 seconds, hide splash screen and show main content
-    setTimeout(() => {
-        splashScreen.style.animation = 'hideSplash 0.8s ease-out forwards';
+        // After 4 seconds, hide splash screen and show main content
+        setTimeout(() => {
+            splashScreen.style.animation = 'hideSplash 0.8s ease-out forwards';
+            mainContent.style.display = 'flex';
+            header.style.display = 'block';
+            
+            // Remove splash screen from DOM after animation
+            setTimeout(() => {
+                splashScreen.remove();
+            }, 800);
+            
+            hasSeenSplash = true;  // Mark that we've shown the splash screen
+        }, 4000);
+    } else {
+        // If we've already shown the splash screen, hide it immediately
+        splashScreen.style.display = 'none';
         mainContent.style.display = 'flex';
         header.style.display = 'block';
-        
-        // Remove splash screen from DOM after animation
-        setTimeout(() => {
-            splashScreen.remove();
-        }, 800);
-    }, 4000);
+    }
 });
 
 let selectedProduct = {
@@ -1580,7 +2001,7 @@ function showFirstModal(productImg, productTitle, productPrice, shedQuantity) {
             </div>
             <div class="order-details" style="text-align: right; direction: rtl;">
                 <p style="display: flex; justify-content: flex-end; gap: 10px;">
-                    عدد الشدات: <span id="totalSheds">${quantity * shedQuantity}</span> شدة
+عدد الشدات: <span id="totalSheds">${quantity * shedQuantity}</span> شدة
                 </p>
                 <p style="display: flex; justify-content: flex-end; gap: 10px;">
                     السعر الإجمالي: <span id="totalPrice">${totalPrice}</span> جنيه
@@ -1664,7 +2085,7 @@ function goBack() {
             allowOutsideClick: false
         });
     } else {
-        window.location.reload();
+        closeModal();  
     }
 }
 
@@ -1682,7 +2103,7 @@ function showIdModal() {
             <button onclick="saveIdAndContinue()">متابعة الشراء</button>
         </div>
     `;
-    showModal(content);
+    showModal(content, true);
 }
 
 function saveIdAndContinue() {
@@ -1705,7 +2126,7 @@ function showPaymentModal() {
             </div>
         </div>
     `;
-    showModal(content);
+    showModal(content, true);
 }
 
 function showPaymentDetails(method) {
@@ -1755,17 +2176,10 @@ function showTransferConfirmation() {
                 </svg>
                 <input type="text" id="transferNumber" placeholder="ادخل الرقم الذي حولت منه" value="${inputData.transferNumber}">
             </div>
-            <label class="custom-file-upload" id="fileUploadLabel">
-                <i>📎</i> اختر صورة التحويل
-                <input type="file" id="transferProof" accept="image/*" style="display: none;" onchange="handleImageUpload(event)">
-            </label>
-            <div class="file-status" id="fileStatus" style="display: none;">
-                <i>✓</i> تم تحديد الصورة بنجاح
-            </div>
             <button onclick="saveTransferAndContinue()">تمت العملية</button>
         </div>
     `;
-    showModal(content);
+    showModal(content, true);
 }
 
 function handleImageUpload(event) {
@@ -1813,7 +2227,7 @@ function showWhatsappInfo() {
             <button onclick="saveContactAndFinish()">تم الشراء</button>
         </div>
     `;
-    showModal(content);
+    showModal(content, true);
 }
 
 function saveContactAndFinish() {
@@ -2010,7 +2424,8 @@ function downloadTable() {
 }
 
 function closeModal() {
-    window.location.reload();
+    Swal.close();
+    modalHistory = []; // Reset modal history
 }
 
 function increaseQuantity() {
@@ -2048,10 +2463,18 @@ function toggleSideNav() {
     const sideNav = document.querySelector('.side-nav');
     const overlay = document.querySelector('.side-nav-overlay');
     const burgerMenu = document.querySelector('.burger-menu');
+    const whatsappFloat = document.querySelector('.whatsapp-float');
     
     sideNav.classList.toggle('active');
     overlay.classList.toggle('active'); 
     burgerMenu.classList.toggle('active');
+
+    // Hide/show WhatsApp float button
+    if (sideNav.classList.contains('active')) {
+        whatsappFloat.style.display = 'none';
+    } else {
+        whatsappFloat.style.display = 'flex';
+    }
 }
 
 function scrollToSection(sectionId) {
@@ -2080,8 +2503,8 @@ function showAdminContact(name, whatsappNumber) {
                 <h3>تواصل مع ${name}</h3>
                 <p style="color: #fff; margin-bottom: 20px;">يمكنك التواصل عبر الواتساب</p>
                 <a href="https://wa.me/${whatsappNumber}" target="_blank" class="whatsapp-btn">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
-                        <path d="17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                     </svg>
                     تواصل على واتساب
                 </a>
@@ -2093,6 +2516,114 @@ function showAdminContact(name, whatsappNumber) {
             popup: 'admin-contact-modal'
         }
     });
+}
+
+function showSupportedCountries() {
+    const content = `
+        <div class="fullscreen-modal supported-countries">
+            <h2 style="color: #00b4d8; margin-bottom: 30px;">الدول التي ندعمها</h2>
+            
+            <div class="countries-container">
+                <div class="country-card">
+                    <div class="country-flag">
+                        <span class="flag" style="font-size: 2.5rem; margin-left: 15px;">🇪🇬</span>
+                    </div>
+                    <div class="country-info">
+                        <h3>جمهورية مصر العربية</h3>
+                        <span class="supported-badge">مدعومة</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="coming-soon-message">
+                <p>سندعم المزيد من الدول العربية في التحديثات القادمة</p>
+                <div class="progress-indicator">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            
+            <button onclick="closeModal()" class="close-countries-btn">إغلاق</button>
+        </div>
+    `;
+    
+    showModal(content, false); // Set showBackButton to false
+}
+
+function showTutorial() {
+    const content = `
+        <div class="fullscreen-modal tutorial-modal">
+            <h2 style="color: #00b4d8; margin-bottom: 30px;">شرح طريقة الشراء</h2>
+            
+            <div class="video-container">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/s8MemdMJP-A" 
+                    title="شرح طريقة الشراء من متجر سيناوي" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <p class="tutorial-description">
+                هذا فيديو طريقة شراء الشدات من موقع متجر سيناوي
+            </p>
+            
+            <button onclick="closeModal()" class="close-tutorial-btn">إغلاق</button>
+        </div>
+    `;
+    
+    showModal(content, false); // Set showBackButton to false
+}
+
+function showWorkHours() {
+    const content = `
+        <div class="fullscreen-modal work-hours-modal">
+            <h2 style="color: #00b4d8; margin-bottom: 30px;">مواعيد العمل</h2>
+            
+            <div class="work-hours-container">
+                <div class="work-hours-card">
+                    <div class="work-hours-header">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <span>ساعات العمل اليومية</span>
+                    </div>
+                    <div class="work-hours-content">
+                        <div class="time-slot active">
+                            <div class="time-info">
+                                <span class="time">7:00 صباحاً - 12:00 منتصف الليل</span>
+                                <span class="status">متاح</span>
+                            </div>
+                        </div>
+                        <div class="time-slot inactive">
+                            <div class="time-info">
+                                <span class="time">12:00 منتصف الليل - 7:00 صباحاً</span>
+                                <span class="status">مغلق</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-note">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <span>نعمل يومياً بما في ذلك العطلات والإجازات الرسمية</span>
+                </div>
+            </div>
+            
+            <button onclick="closeModal()" class="close-hours-btn">إغلاق</button>
+        </div>
+    `;
+    
+    showModal(content, false); // Set showBackButton to false
 }
 </script>
 </body>
