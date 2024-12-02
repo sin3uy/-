@@ -38,17 +38,17 @@ body {
     justify-content: center;
     gap: 15px;
     background: rgba(255, 255, 255, 0.1);
-    padding: 5px 15px; /* Reduced padding */
+    padding: 5px 15px;
     border-radius: 30px;
     margin: 0 auto;
     width: fit-content;
-    height: 60px; /* Fixed height */
+    height: 60px;
 }
 
 .logo-container {
     position: relative;
-    width: 45px; /* Reduced size */
-    height: 45px; /* Reduced size */
+    width: 45px;
+    height: 45px;
 }
 
 .logo-image {
@@ -70,20 +70,20 @@ body {
 
 .store-name {
     color: #fff;
-    font-size: 1.4rem; /* Reduced font size */
+    font-size: 1.4rem;
     font-weight: bold;
 }
 
 header {
     background: #16213e;
-    padding: 10px; /* Reduced padding */
+    padding: 10px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    position: fixed; /* Make header fixed */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100; /* Ensure header stays above other content */
+    z-index: 100;
 }
 
 header h1 {
@@ -92,7 +92,7 @@ header h1 {
 }
 
 main {
-    margin-top: 80px; /* Add top margin to account for fixed header */
+    margin-top: 80px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -108,7 +108,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* This will push button to bottom */
     background: #16213e;
     border-radius: 15px;
     padding: 20px;
@@ -117,7 +117,6 @@ main {
     margin: 0;
     width: calc(50% - 20px);
     max-width: 350px;
-    position: relative;
 }
 
 .product-card img {
@@ -172,6 +171,30 @@ main {
 
 .product-card p:hover {
     transform: scale(1.05);
+}
+
+.product-card button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    color: #00b4d8;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin: 0; /* Remove top/bottom margin */
+    display: block;
+    min-width: 100%; /* Make button fill card width */
+    max-width: 100%; /* Ensure button doesn't exceed card width */
+    width: 100%;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 180, 216, 0.1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
 button {
@@ -278,15 +301,12 @@ input[type="text"]:focus {
 }
 
 .swal2-popup {
-    background: #16213e;
-    border-radius: 15px;
-    color: white;
-    padding: 20px;
-    padding-bottom: 100px !important;
-    min-height: 100vh !important;
     width: 100% !important;
     max-width: 100% !important;
+    padding: 0 !important;
     margin: 0 !important;
+    border-radius: 0 !important;
+    min-height: 100vh !important;
 }
 
 .swal2-html-container {
@@ -304,30 +324,42 @@ input[type="text"]:focus {
     background: #16213e;
     min-height: 100vh;
     width: 100%;
+    padding-bottom: 80px !important;
 }
 
 .fullscreen-modal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     min-height: 100vh;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.fullscreen-modal h2 {
-    margin-bottom: 30px;
+    width: 100%;
+    padding: 80px 20px 20px;
+    background: #1a1a2e;
 }
 
 .back-button {
-    background: #16213e;  /* Changed from #e63946 to darker blue */
     position: fixed;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 20px;
     z-index: 9999;
-    margin-bottom: 20px;
+    background: #16213e;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #00b4d8;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+.back-button:hover {
+    background: rgba(0, 180, 216, 0.1);
+    transform: translateY(-2px);
+}
+
+.back-button svg {
+    width: 20px;
+    height: 20px;
 }
 
 .success-message {
@@ -681,13 +713,13 @@ th {
 
 .burger-menu {
     position: fixed;
-    top: 12px; /* Center vertically within header */
+    top: 12px;
     right: 15px;
     width: 35px;
     height: 35px;
-    background: none; /* Remove background */
-    border: none; /* Remove border */
-    border-radius: 0; /* Remove border radius */
+    background: none;
+    border: none;
+    border-radius: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -790,7 +822,7 @@ th {
 .video-container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 56.25%;
     background: rgba(0, 180, 216, 0.1);
     border-radius: 15px;
     margin: 20px 0;
@@ -918,30 +950,26 @@ th {
 }
 
 @media (max-width: 768px) {
-    /* Update product card styling for mobile */
     .product-card {
-        width: calc(50% - 20px); /* Make cards take up half width minus gap */
-        margin: 10px; /* Add some margin */
-        padding: 15px; /* Reduce padding for smaller screens */
+        width: calc(50% - 20px);
+        margin: 10px;
+        padding: 15px;
     }
 
-    /* Adjust main content container */
     main {
         padding: 10px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0; /* Remove gap since we're using margins */
-        margin-top: 80px; /* Keep space for fixed header */
+        gap: 0;
+        margin-top: 80px;
     }
 
-    /* Make sure images scale properly */
     .product-card img {
         width: 100%;
         height: auto;
     }
 
-    /* Adjust text sizes for better mobile display */
     .product-card h2 {
         font-size: 1rem;
         margin: -20px auto 10px auto;
@@ -954,17 +982,16 @@ th {
     .product-card button {
         padding: 8px 15px;
         font-size: 0.9rem;
-        min-width: unset;
-        width: 90%;
+        min-width: 100%;
+        width: 100%;
     }
 }
 
-/* Add additional breakpoint for very small screens */
 @media (max-width: 360px) {
     .product-card {
-        width: calc(50% - 10px); /* Slightly adjust width for very small screens */
-        margin: 5px; /* Reduce margin */
-        padding: 10px; /* Reduce padding */
+        width: calc(50% - 10px);
+        margin: 5px;
+        padding: 10px;
     }
 }
 
@@ -1276,19 +1303,29 @@ button[onclick="closeModal()"] {
 
 .footer-title {
     color: #00b4d8;
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
     text-shadow: 0 0 10px rgba(0, 180, 216, 0.3);
 }
 
-.footer-subtitle {
-    color: #fff;
-    font-size: 1.2rem;
-    margin: 15px 0;
-    padding: 10px;
+.footer-date {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 20px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.footer-contact {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    color: #00b4d8;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
     background: rgba(0, 180, 216, 0.1);
-    border-radius: 10px;
-    line-height: 1.6;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    transition: all 0.3s ease;
 }
 
 .footer-social {
@@ -1326,10 +1363,13 @@ button[onclick="closeModal()"] {
     color: rgba(255, 255, 255, 0.7);
     margin: 20px 0;
     font-size: 0.9rem;
+    text-align: center;
 }
 
 .footer-contact {
-    display: inline-block;
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
     color: #00b4d8;
     text-decoration: none;
     padding: 10px 20px;
@@ -1337,12 +1377,26 @@ button[onclick="closeModal()"] {
     background: rgba(0, 180, 216, 0.1);
     border: 1px solid rgba(0, 180, 216, 0.3);
     transition: all 0.3s ease;
-    margin-top: 20px;
 }
 
-.footer-contact:hover {
-    background: rgba(0, 180, 216, 0.2);
-    transform: translateY(-2px);
+.footer-date {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 20px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.footer-contact {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    color: #00b4d8;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    transition: all 0.3s ease;
 }
 
 @keyframes glowing {
@@ -1571,38 +1625,6 @@ button[onclick="closeModal()"] {
         </svg>
         الصفحة الرئيسية
     </button>
-    <button class="side-nav-button" onclick="scrollToSection('top-buyers-section')">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg>
-        أفضل المشترين
-    </button>
-    <button class="side-nav-button" onclick="scrollToSection('testimonials-section')">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
-        آراء العملاء
-    </button>
-    <button class="side-nav-button" onclick="scrollToSection('admin-section')">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 7h-9"></path>
-            <path d="M14 17H5"></path>
-            <circle cx="17" cy="17" r="3"></circle>
-            <circle cx="7" cy="7" r="3"></circle>
-        </svg>
-        إدارة الموقع
-    </button>
-    <button class="side-nav-button" onclick="showSupportedCountries()">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-        </svg>
-        الدول التي ندعمها
-    </button>
     <button class="side-nav-button" onclick="showTutorial()">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
@@ -1627,173 +1649,215 @@ button[onclick="closeModal()"] {
         <img src="https://i.postimg.cc/LsB5p195/image.jpg" alt="30 شدة" width="200" height="200">
         <h2>30 شدة</h2>
         <p>25</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/LsB5p195/image.jpg', '30 شدة', 25, 30)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/LsB5p195/image.jpg', '30 شدة', 25, 30)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/qqtrkP58/1000003300.jpg" alt="60 شدة" width="200" height="200">
         <h2>60 شدة</h2>
         <p>50</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/qqtrkP58/1000003300.jpg', '60 شدة', 50, 60)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/qqtrkP58/1000003300.jpg', '60 شدة', 50, 60)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/RF2SnCfP/1000003301.jpg" alt="120 شدة" width="200" height="200">
         <h2>120 شدة</h2>
         <p>100</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/RF2SnCfP/1000003301.jpg', '120 شدة', 100, 120)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/RF2SnCfP/1000003301.jpg', '120 شدة', 100, 120)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/ydc5v7tp/1000003302.jpg" alt="180 شدة" width="200" height="200">
         <h2>180 شدة</h2>
         <p>150</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/ydc5v7tp/1000003302.jpg', '180 شدة', 150, 180)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/ydc5v7tp/1000003302.jpg', '180 شدة', 150, 180)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/pTN200hQ/٢٠٢٤١١٠٣-١٤٠٥٥٠.jpg" alt="325 شدة" width="200" height="200">
         <h2>325 شدة</h2>
         <p>230</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/pTN200hQ/٢٠٢٤١١٠٣-١٤٠٥٥٠.jpg', '325 شدة', 230, 325)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/pTN200hQ/٢٠٢٤١١٠٣-١٤٠٥٥٠.jpg', '325 شدة', 230, 325)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/NGSWRyXT/٢٠٢٤١١٠٣-١٤٠٦٠١.jpg" alt="360 شدة" width="200" height="200">
         <h2>360 شدة</h2>
         <p>250</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/NGSWRyXT/٢٠٢٤١١٠٣-١٤٠٦٠١.jpg', '360 شدة', 250, 360)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/NGSWRyXT/٢٠٢٤١١٠٣-١٤٠٦٠١.jpg', '360 شدة', 250, 360)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/k4x7LxK0/1000003305.jpg" alt="720 شدة" width="200" height="200">
         <h2>720 شدة</h2>
         <p>495</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/k4x7LxK0/1000003305.jpg', '720 شدة', 495, 720)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/k4x7LxK0/1000003305.jpg', '720 شدة', 495, 720)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/J0xMzMTK/٢٠٢٤١١٠٣-١٤١٣٠٧.jpg" alt="1200 شدة" width="200" height="200">
         <h2>1200 شدة</h2>
         <p>955</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/J0xMzMTK/٢٠٢٤١١٠٣-١٤١٣٠٧.jpg', '1200 شدة', 955, 1200)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/J0xMzMTK/٢٠٢٤١١٠٣-١٤١٣٠٧.jpg', '1200 شدة', 955, 1200)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/v8tQztQ9/٢٠٢٤١١٠٣-١٤١٣١٧.jpg" alt="1440 شدة" width="200" height="200">
         <h2>1440 شدة</h2>
         <p>1000</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/v8tQztQ9/٢٠٢٤١١٠٣-١٤١٣١٧.jpg', '1440 شدة', 1000, 1440)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/v8tQztQ9/٢٠٢٤١١٠٣-١٤١٣١٧.jpg', '1440 شدة', 1000, 1440)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/02NqCgXR/٢٠٢٤١١٠٣-١٤١٣٢٩.jpg" alt="2000 شدة" width="200" height="200">
         <h2>2000 شدة</h2>
         <p>1425</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/02NqCgXR/٢٠٢٤١١٠٣-١٤١٣٢٩.jpg', '2000 شدة', 1425, 2000)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/02NqCgXR/٢٠٢٤١١٠٣-١٤١٣٢٩.jpg', '2000 شدة', 1425, 2000)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/W3J7V44L/٢٠٢٤١١٠٣-١٤١٣٤٠.jpg" alt="4000 شدة" width="200" height="200">
         <h2>4000 شدة</h2>
         <p>2850</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/W3J7V44L/٢٠٢٤١١٠٣-١٤١٣٤٠.jpg', '4000 شدة', 2850, 4000)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/W3J7V44L/٢٠٢٤١١٠٣-١٤١٣٤٠.jpg', '4000 شدة', 2850, 4000)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/T1VqyHmt/٢٠٢٤١١٠٣-١٤١٤٠٧.jpg" alt="6000 شدة" width="200" height="200">
         <h2>6000 شدة</h2>
         <p>4275</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/T1VqyHmt/٢٠٢٤١١٠٣-١٤١٤٠٧.jpg', '6000 شدة', 4275, 6000)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/T1VqyHmt/٢٠٢٤١١٠٣-١٤١٤٠٧.jpg', '6000 شدة', 4275, 6000)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/G3GjS9Nv/٢٠٢٤١١٠٣-١٤١٤٢٤.jpg" alt="8000 شدة" width="200" height="200">
         <h2>8000 شدة</h2>
         <p>5100</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/G3GjS9Nv/٢٠٢٤١١٠٣-١٤١٤٢٤.jpg', '8000 شدة', 5100, 8000)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/G3GjS9Nv/٢٠٢٤١١٠٣-١٤١٤٢٤.jpg', '8000 شدة', 5100, 8000)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/J4Q5MvRn/٢٠٢٤١١٠٣-١٤١٤٣٩.jpg" alt="16000 شدة" width="200" height="200">
         <h2>16000 شدة</h2>
         <p>9500</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/J4Q5MvRn/٢٠٢٤١١٠٣-١٤١٤٣٩.jpg', '16000 شدة', 9500, 16000)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/J4Q5MvRn/٢٠٢٤١١٠٣-١٤١٤٣٩.jpg', '16000 شدة', 9500, 16000)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 
     <div class="product-card">
         <img src="https://i.postimg.cc/rwFCmjp9/٢٠٢٤١١٠٣-١٤١٤٣٩.jpg" alt="32000 شدة" width="200" height="200">
         <h2>32000 شدة</h2>
         <p>18000</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/rwFCmjp9/٢٠٢٤١١٠٣-١٤١٤٣٩.jpg', '32000 شدة', 18000, 32000)">شراء</button>
+        <button onclick="showFirstModal('https://i.postimg.cc/rwFCmjp9/٢٠٢٤١١٠٣-١٤١٤٣٩.jpg', '32000 شدة', 18000, 32000)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            شراء
+        </button>
     </div>
 </main>
 
-<div class="top-buyers-section">
-    <h3 style="color: #00b4d8; margin-bottom: 20px; text-align: center;">أفضل المشترين</h3>
-    <div class="top-buyers-container">
-        <div class="buyer-card">
-            <img src="https://i.postimg.cc/G2y0nLhS/favourite.png" alt="محمد" class="buyer-avatar gold-border">
-            <div class="buyer-info">
-                <span class="buyer-name">محمد</span>
-                <span class="buyer-rank">#1 الأكثر شراءً</span>
-            </div>
-            <div class="buyer-badge" style="background: #ffd700;">
-                🔥
-            </div>
-        </div>
-
-        <div class="buyer-card">
-            <img src="https://i.postimg.cc/Hs2RDwF9/1000002001.jpg" alt="احمد" class="buyer-avatar silver-border">
-            <div class="buyer-info">
-                <span class="buyer-name">احمد</span>
-                <span class="buyer-rank">#2 متميز</span>
-            </div>
-            <div class="buyer-badge" style="background: #C0C0C0;">
-                ⭐
-            </div>
-        </div>
-
-        <div class="buyer-card">
-            <img src="https://i.postimg.cc/P5jpVrxB/channels4-profile.jpg" alt="شادي" class="buyer-avatar bronze-border">
-            <div class="buyer-info">
-                <span class="buyer-name">شادي</span>
-                <span class="buyer-rank">#3 نشط</span>
-            </div>
-            <div class="buyer-badge" style="background: #CD7F32;">
-                💫
-            </div>
-        </div>
-
-        <div class="buyer-card">
-            <img src="https://i.postimg.cc/nL3Wf3Jh/IMG-20241123-141223-890.jpg" alt="محمود" class="buyer-avatar">
-            <div class="buyer-info">
-                <span class="buyer-name">محمود</span>
-                <span class="buyer-rank">#4</span>
-            </div>
-        </div>
-
-        <div class="buyer-card">
-            <img src="https://i.postimg.cc/Hs2RDwF9/1000002001.jpg" alt="عمر" class="buyer-avatar">
-            <div class="buyer-info">
-                <span class="buyer-name">عمر</span>
-                <span class="buyer-rank">#5</span>
-            </div>
-        </div>
-    </div>
-</div>
-
 <footer class="footer">
     <div class="footer-content">
-        <h2 class="footer-title">متجر سيناوي</h2>
-        <p class="footer-subtitle">
-            يبيع شدات ببجي موبايل بأرخص الأسعار في مصر
-            <br>
-            يدعم طرق الدفع التالية: 
-            <span style="color: #e60000;">فودافون كاش</span> - 
-            <span style="color: #4CAF50;">اتصالات كاش</span> - 
-            <span style="color: #ff7900;">اورنج كاش</span>
-        </p>
         <div class="testimonials-section">
             <h3 style="color: #00b4d8; margin-bottom: 20px;">آراء العملاء</h3>
             <div class="testimonials-container">
@@ -1814,106 +1878,22 @@ button[onclick="closeModal()"] {
                     <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
                     <p class="testimonial-text">شكرا تم الشحن افضل متجر</p>
                 </div>
-            </div>
-        </div>
-        <div class="admin-section">
-            <h3 style="color: #00b4d8; margin: 30px 0 20px;">إدارة الموقع</h3>
-            <div class="admin-cards">
-                <div class="admin-card" onclick="showAdminContact('شادي', '+201001064267')">
-                    <div class="admin-avatar-container">
-                        <img src="https://i.postimg.cc/wBVv5pLX/channels4-profile.jpg" alt="Admin" class="admin-avatar">
-                        <div class="verification-badge gold">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="admin-info">
-                        <span class="admin-name">شادي</span>
-                        <span class="admin-role gold">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                            </svg>
-                            مسؤول الموقع
-                        </span>
-                        <span style="color: #fff; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                            الفرع الرئيسي
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="admin-card" onclick="showAdminContact('محمود صابر', '+201001064267')">
-                    <div class="admin-avatar-container">
-                        <img src="https://i.postimg.cc/nL3Wf3Jh/IMG-20241123-141223-890.jpg" alt="Moderator" class="admin-avatar">
-                        <div class="verification-badge blue">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="admin-info">
-                        <span class="admin-name">محمود صابر</span>
-                        <span class="admin-role blue">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20 6L9 17L4 12"/>
-                            </svg>
-                            مشرف الموقع
-                        </span>
-                        <span style="color: #fff; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            فرع بني سويف
-                        </span>
-                    </div>
-                </div>
 
-                <div class="admin-card" onclick="showAdminContact('كريم الداودي', '+201001064267')">
-                    <div class="admin-avatar-container">
-                        <img src="https://i.postimg.cc/4yGFRGBq/IMG-20241130-WA0055.jpg" alt="Moderator" class="admin-avatar">
-                        <div class="verification-badge blue">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://i.postimg.cc/SRqCJ19Y/Screenshot-٢٠٢٤١١٣٠-٠٠٣٥٥٣-WhatsApp.jpg" alt="محمد السيناوي" class="testimonial-avatar">
+                        <span class="testimonial-name">محمد السيناوي</span>
                     </div>
-                    <div class="admin-info">
-                        <span class="admin-name">كريم الداودي</span>
-                        <span class="admin-role blue">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20 6L9 17L4 12"/>
-                            </svg>
-                            مشرف الموقع
-                        </span>
-                        <span style="color: #fff; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            فرع دمياط
-                        </span>
-                    </div>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">احلا متجر سيناوي 🥰</p>
                 </div>
             </div>
         </div>
-        <div class="footer-social">
-            <a href="https://t.me/sinauy" target="_blank" class="social-icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M22.05 1.577c-.393-.016-.784.08-1.117.235-.484.186-4.92 1.902-9.41 3.64-2.26.873-4.518 1.746-6.256 2.415-1.737.67-3.045 1.168-3.114 1.192-.46.16-1.082.362-1.61.984-.133.155-.267.354-.335.628s-.038.622.095.895c.265.547.714.773 1.244.976 1.76.564 3.58 1.102 5.087 1.608.556 1.96 1.09 3.927 1.618 5.89.174.394.553.54.944.544l-.002.02s.307.03.606-.042c.3-.07.677-.244 1.02-.565.377-.354 1.4-1.36 1.98-1.928l4.37 3.226.035.02s.484.34 1.192.388c.354.024.82-.044 1.22-.337.403-.294.67-.767.795-1.307.374-1.63 2.853-13.427 3.276-15.38l-.012.046c.296-1.1.187-2.108-.496-2.705-.342-.297-.736-.427-1.13-.444zm-.118 1.874c.027.025.025.025.002.027-.007-.002.08.118-.09.755l-.007.024-.005.022c-.432 1.997-2.936 13.9-3.27 15.356-.046.196-.065.182-.054.17-.1-.015-.285-.094-.3-.1l-7.48-5.525c2.562-2.467 5.182-4.7 7.827-7.08.468-.235.39-.96-.17-.972-.594.14-1.095.567-1.64.84-3.132 1.858-6.332 3.492-9.43 5.406-1.59-.553-3.177-1.012-4.767-1.572.1-.02.13-.037.35-.118.262-.097 2.146-.795 1.392-.513h.002c4.474-1.732 8.947-3.405 13.395-5.247.344-.13.638-.276.906-.368.767-.27 1.683-.4 2.075-.047.047.042.088.088.135.142zm-2.4 2.8c-1.788 1.647-3.624 3.25-5.403 4.91-1.078 1.005-2.125 2.042-3.188 3.063-.252.257-.4.61-.41.984-.012.373.114.74.356 1.01.96 1.06 2.1 1.857 3.135 2.785.298.27.618.497.924.738.337.27.738.52 1.07.775.348.267 1.002-.17 1.195-.438.193-.27.184-.555.225-.876.157-.998.328-2.022.527-3.01.133-.664.262-1.328.363-1.997.082-.537.144-1.078.228-1.608v-.022z"/>
-                </svg>
-            </a>
-        </div>
+        <p class="footer-date">تم إنشاء المتجر بتاريخ 23-11-2024</p>
+        <a href="https://wa.me/+201009123031" target="_blank" class="footer-contact" style="opacity: 0.7;">
+            لشراء موقع حسب طلبك تواصل هنا
+        </a>
     </div>
-    <p class="footer-date">تم إنشاء المتجر بتاريخ 23-11-2024</p>
-    <a href="https://wa.me/+201009123031" target="_blank" class="footer-contact">
-        لشراء موقع حسب طلبك تواصل هنا
-    </a>
-</div>
 </footer>
 
 <a href="https://wa.me/+201009123031" target="_blank" class="whatsapp-float" title="تواصل معنا على واتساب">
@@ -1931,25 +1911,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
 
     if (!hasSeenSplash) {
-        // Hide main content initially
         mainContent.style.display = 'none';
         header.style.display = 'none';
 
-        // After 4 seconds, hide splash screen and show main content
         setTimeout(() => {
             splashScreen.style.animation = 'hideSplash 0.8s ease-out forwards';
             mainContent.style.display = 'flex';
             header.style.display = 'block';
             
-            // Remove splash screen from DOM after animation
             setTimeout(() => {
                 splashScreen.remove();
             }, 800);
             
-            hasSeenSplash = true;  // Mark that we've shown the splash screen
+            hasSeenSplash = true;
         }, 4000);
     } else {
-        // If we've already shown the splash screen, hide it immediately
         splashScreen.style.display = 'none';
         mainContent.style.display = 'flex';
         header.style.display = 'block';
@@ -1984,7 +1960,6 @@ function showFirstModal(productImg, productTitle, productPrice, shedQuantity) {
         quantity: shedQuantity
     };
     
-    // Reset quantity and update total price
     quantity = 1;
     totalPrice = productPrice;
     
@@ -2056,20 +2031,29 @@ function showModal(content, showBackButton = true) {
     };
     modalHistory.push(currentModal);
 
-    const backButton = showBackButton ? `<button class="back-button" onclick="goBack()">رجوع</button>` : '';
+    const backButton = showBackButton ? 
+        `<button class="back-button" onclick="goBack()">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            رجوع
+        </button>` : '';
     
     Swal.fire({
-        html: backButton + content,
+        html: content + backButton,
         showConfirmButton: false,
         allowOutsideClick: false,
+        allowEscapeKey: false,
+        showCloseButton: false,
         customClass: {
             popup: 'swal2-popup',
-            htmlContainer: 'swal2-html-container'
+            container: 'swal2-container'
         },
-        didOpen: () => {
-            if (!modalHistory.some(modal => modal.content === content)) {
-                modalHistory.push(currentModal);
-            }
+        willOpen: () => {
+            document.body.style.overflow = 'hidden';
+        },
+        willClose: () => {
+            document.body.style.overflow = 'auto';
         }
     });
 }
@@ -2080,13 +2064,31 @@ function goBack() {
         const previousModal = modalHistory[modalHistory.length - 1];
         
         Swal.fire({
-            html: (previousModal.showBackButton ? `<button class="back-button" onclick="goBack()">رجوع</button>` : '') + previousModal.content,
+            html: (previousModal.showBackButton ? 
+                `<button class="back-button" onclick="goBack()">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    رجوع
+                </button>` : '') + previousModal.content,
             showConfirmButton: false,
-            allowOutsideClick: false
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            showCloseButton: false,
+            customClass: {
+                popup: 'swal2-popup',
+                container: 'swal2-container'
+            }
         });
     } else {
-        closeModal();  
+        closeModal();
     }
+}
+
+function closeModal() {
+    Swal.close();
+    modalHistory = [];
+    document.body.style.overflow = 'auto';
 }
 
 function showIdModal() {
@@ -2137,7 +2139,7 @@ function showPaymentDetails(method) {
             <div style="margin: 20px 0;">
                 <h3>قم بتحويل المبلغ</h3>
                 <p style="margin: 15px 0;">المبلغ: ${totalPrice} جنيه</p>
-                <div class="phone-number-container" style="
+<div class="phone-number-container" style="
                     background: rgba(0, 180, 216, 0.1);
                     padding: 15px;
                     border-radius: 10px;
@@ -2281,7 +2283,6 @@ ${currentDate} :التاريخ 📅
     `;
 
     try {
-        // Send text message
         await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
             method: 'POST',
             headers: {
@@ -2294,9 +2295,7 @@ ${currentDate} :التاريخ 📅
             })
         });
 
-        // If there's a transfer image, send it
         if (purchaseData.transferImage) {
-            // Convert base64 to blob
             const base64Response = await fetch(purchaseData.transferImage);
             const imageBlob = await base64Response.blob();
             
@@ -2311,7 +2310,6 @@ ${currentDate} :التاريخ 📅
             });
         }
 
-        // Show success message after sending to Telegram
         showSuccessMessage(purchaseData.firstName);
     } catch (error) {
         console.error('Error:', error);
@@ -2425,7 +2423,7 @@ function downloadTable() {
 
 function closeModal() {
     Swal.close();
-    modalHistory = []; // Reset modal history
+    modalHistory = [];
 }
 
 function increaseQuantity() {
@@ -2443,20 +2441,15 @@ function decreaseQuantity() {
 function updateStatusIndicator() {
     const statusIndicator = document.getElementById('statusIndicator');
     const currentHour = new Date().getHours();
-    
-    // Green between 7:00 AM and 12:00 AM (midnight)
+
     if (currentHour >= 7 && currentHour < 24) {
         statusIndicator.style.backgroundColor = '#4CAF50';
     } else {
-        // Red between 12:00 AM (midnight) and 7:00 AM
         statusIndicator.style.backgroundColor = '#e63946';
     }
 }
 
-// Update status indicator on page load
 updateStatusIndicator();
-
-// Update status indicator every minute
 setInterval(updateStatusIndicator, 60000);
 
 function toggleSideNav() {
@@ -2464,12 +2457,11 @@ function toggleSideNav() {
     const overlay = document.querySelector('.side-nav-overlay');
     const burgerMenu = document.querySelector('.burger-menu');
     const whatsappFloat = document.querySelector('.whatsapp-float');
-    
+
     sideNav.classList.toggle('active');
     overlay.classList.toggle('active'); 
     burgerMenu.classList.toggle('active');
 
-    // Hide/show WhatsApp float button
     if (sideNav.classList.contains('active')) {
         whatsappFloat.style.display = 'none';
     } else {
@@ -2481,7 +2473,6 @@ function scrollToSection(sectionId) {
     const section = document.querySelector('.' + sectionId);
     if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
-        // Close the side nav after clicking
         toggleSideNav();
     }
 }
@@ -2491,7 +2482,6 @@ function scrollToTop() {
         top: 0,
         behavior: 'smooth'
     });
-    // Close the side nav after clicking
     toggleSideNav();
 }
 
@@ -2548,7 +2538,7 @@ function showSupportedCountries() {
         </div>
     `;
     
-    showModal(content, false); // Set showBackButton to false
+    showModal(content, false);
 }
 
 function showTutorial() {
@@ -2576,7 +2566,7 @@ function showTutorial() {
         </div>
     `;
     
-    showModal(content, false); // Set showBackButton to false
+    showModal(content, false);
 }
 
 function showWorkHours() {
@@ -2623,7 +2613,7 @@ function showWorkHours() {
         </div>
     `;
     
-    showModal(content, false); // Set showBackButton to false
+    showModal(content, false);
 }
 </script>
 </body>
