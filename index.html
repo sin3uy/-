@@ -1,21 +1,11 @@
-<html><head><base href="." />
+<!DOCTYPE html><html><head><base href=".">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="متجر شحن شدات ببجي موبايل بارخص سعر - متجر شاحن شدات ببجي العالميه - ارخص متجر شحن شدات ببجي">
-<meta name="keywords" content="شدات ببجي موبايل, شراء شدات ببجي موبايل, ارخص متجر شراء شدات ببجي موبايل, متجر سيناوي, شحن شدات ببجي, شدات ببجي رخيصة, شدات ببجي مصر">
-<meta name="author" content="متجر سيناوي">
-<meta property="og:title" content="متجر سيناوي لشحن شدات ببجي | Sina PUBG Store">
-<meta property="og:description" content="متجر شحن شدات ببجي موبايل بارخص سعر - متجر شاحن شدات ببجي العالميه - ارخص متجر شحن شدات ببجي">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="متجر سيناوي">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="متجر سيناوي لشحن شدات ببجي | Sina PUBG Store">
-<meta name="twitter:description" content="متجر شحن شدات ببجي موبايل بارخص سعر - متجر شاحن شدات ببجي العالميه - ارخص متجر شحن شدات ببجي">
 <title>متجر سيناوي لشحن شدات ببجي | Sina PUBG Store</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&amp;display=swap" rel="stylesheet">
 <style>
 * {
     margin: 0;
@@ -976,6 +966,32 @@ td {
     color: #F44336;
 }
 
+.footer-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 20px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.footer-contact:hover {
+    transform: translateY(-2px);
+    background: rgba(0, 180, 216, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 180, 216, 0.2);
+    opacity: 1;
+}
+
+.footer-contact svg {
+    transition: transform 0.3s ease;
+}
+
+.footer-contact:hover svg {
+    transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
     .product-card {
         width: calc(50% - 20px);
@@ -1718,7 +1734,7 @@ button:hover {
     </div>
 </div>
 
-<header>
+<header style="border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
     <div class="header-container">
         <div class="logo-container">
             <img src="https://i.postimg.cc/66gRzHH4/1000001416.jpg" alt="متجر سيناوي" class="logo-image">
@@ -1728,16 +1744,55 @@ button:hover {
     </div>
 </header>
 
-<div class="burger-menu" onclick="toggleSideNav()">
-    <span></span>
-    <span></span>
-    <span></span>
+<div class="burger-menu" onclick="toggleSideNav()" style="
+    top: 15px; 
+    width: 45px; 
+    height: 45px;
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 180, 216, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    padding: 10px;
+">
+    <span style="
+        width: 100%;
+        height: 2px;
+        background: #00b4d8;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 5px rgba(0, 180, 216, 0.3);
+        border-radius: 2px;
+    "></span>
+    <span style="
+        width: 100%;
+        height: 2px;
+        background: #00b4d8;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 5px rgba(0, 180, 216, 0.3);
+        border-radius: 2px;
+    "></span>
+    <span style="
+        width: 100%;
+        height: 2px;
+        background: #00b4d8;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 5px rgba(0, 180, 216, 0.3);
+        border-radius: 2px;
+    "></span>
 </div>
 
 <div class="side-nav">
     <div class="version-info">
-        تحديث الموقع 0.2
-    </div>
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 5px; vertical-align: middle;">
+        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+    </svg>
+    تحديث الموقع 0.2
+</div>
     <button class="side-nav-button" onclick="scrollToTop()">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -1752,13 +1807,6 @@ button:hover {
             <line x1="12" y1="17" x2="12.01" y2="17"></line>
         </svg>
         شرح الموقع
-    </button>
-    <button class="side-nav-button" onclick="showWorkHours()">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
-        </svg>
-        مواعيد العمل
     </button>
 </div>
 
@@ -1892,10 +1940,10 @@ button:hover {
     </div>
 
     <div class="product-card">
-        <img src="https://i.postimg.cc/02NqCgXR/٢٠٢٤١١٠٣-١٤١٣٢٩.jpg" alt="2000 شدة" width="200" height="200">
+        <img src="https://i.postimg.cc/02NqCgXR/٢٠٢٤١٠٣-١٤١٣٢٩.jpg" alt="2000 شدة" width="200" height="200">
         <h2>2000 شدة</h2>
         <p>1425</p>
-        <button onclick="showFirstModal('https://i.postimg.cc/02NqCgXR/٢٠٢٤١١٠٣-١٤١٣٢٩.jpg', '2000 شدة', 1425, 2000)">
+        <button onclick="showFirstModal('https://i.postimg.cc/02NqCgXR/٢٠٢٤١٠٣-١٤١٣٢٩.jpg', '2000 شدة', 1425, 2000)">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="9" cy="21" r="1"></circle>
                 <circle cx="20" cy="21" r="1"></circle>
@@ -1979,46 +2027,216 @@ button:hover {
 <footer class="footer">
     <div class="footer-content">
         <div class="testimonials-section">
-            <h3 style="color: #00b4d8; margin-bottom: 20px;">آراء العملاء</h3>
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://i.postimg.cc/W4VJTBZ6/Screenshot-٢٠٢٤١١٢٤-٢١٤٣١٠-WhatsApp.jpg" alt="كريم" class="testimonial-avatar">
-                        <span class="testimonial-name">كريم</span>
-                    </div>
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">احسن متجر 👍</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://i.postimg.cc/13j9J3NX/Screenshot-٢٠٢٤١١٢٤-١٧٥٨٢٩-WhatsApp.jpg" alt="محمود" class="testimonial-avatar">
-                        <span class="testimonial-name">محمود</span>
-                    </div>
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">شكرا تم الشحن افضل متجر</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://i.postimg.cc/SRqCJ19Y/Screenshot-٢٠٢٤١١٣٠-٠٠٣٥٥٣-WhatsApp.jpg" alt="محمد السيناوي" class="testimonial-avatar">
-                        <span class="testimonial-name">محمد السيناوي</span>
-                    </div>
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">احلا متجر سيناوي 🥰</p>
-                </div>
-            </div>
+            <h3 style="color: #00b4d8; margin-bottom: 20px;">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-left: 8px;">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 7.5 4.7"></path>
+        <path d="M12 8v4l3 3"></path>
+    </svg>
+    آراء العملاء
+</h3>
+            <div class="testimonials-container" style="
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 -20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    background: rgba(0, 180, 216, 0.05);
+    border-radius: 15px;
+    box-shadow: inset 0 0 20px rgba(0, 180, 216, 0.1);
+">
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <img src="https://i.postimg.cc/cCvRvWqv/Screenshot-Whats-App.jpg" alt="احمد ابراهيم" class="testimonial-avatar">
+            <span class="testimonial-name">احمد ابراهيم</span>
         </div>
-        <p class="footer-date">تم إنشاء المتجر بتاريخ 23-11-2024</p>
-        <a href="https://wa.me/+201009123031" target="_blank" class="footer-contact" style="opacity: 0.7;">
-            لشراء موقع حسب طلبك تواصل هنا
-        </a>
+        <div class="testimonial-stars">
+            <span style="color: gold; font-size: 1.2em;">★★★★★</span>
+            <span style="color: gold; font-size: 1.2em; margin-right: 2px;">★</span>
+        </div>
+        <p class="testimonial-text">ممتاز وبالتوفيق</p>
+    </div>
+
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <img src="https://i.postimg.cc/W4VJTBZ6/Screenshot-٢٠٢٤١١٢٤-٢١٤٣١٠-WhatsApp.jpg" alt="كريم" class="testimonial-avatar">
+            <span class="testimonial-name">كريم</span>
+        </div>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">احسن متجر 👍</p>
+    </div>
+
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <img src="https://i.postimg.cc/13j9J3NX/Screenshot-٢٠٢٤١١٢٤-١٧٥٨٢٩-WhatsApp.jpg" alt="محمود" class="testimonial-avatar">
+            <span class="testimonial-name">محمود</span>
+        </div>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">شكرا تم الشحن افصل متجر</p>
+    </div>
+
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <img src="https://i.postimg.cc/SRqCJ19Y/Screenshot-٢٠٢٤١١٣٠-٠٠٣٥٥٣-WhatsApp.jpg" alt="محمد السيناوي" class="testimonial-avatar">
+            <span class="testimonial-name">محمد السيناوي</span>
+        </div>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">احلا متجر سيناوي 🥰</p>
+    </div>
+
+    <style>
+        .testimonial-card {
+            background: rgba(22, 33, 62, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 280px;
+            transition: all 0.3s ease;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 180, 216, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .testimonial-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 180, 216, 0.2);
+            border-color: rgba(0, 180, 216, 0.4);
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid rgba(0, 180, 216, 0.3);
+            box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-header:hover .testimonial-avatar {
+            transform: scale(1.1);
+            border-color: rgba(0, 180, 216, 0.6);
+        }
+
+        .testimonial-stars {
+            margin: 15px 0;
+            font-size: 1.2em;
+            display: flex;
+            justify-content: center;
+            gap: 2px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            }
+        }
+
+        .testimonial-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: center;
+            margin-top: 15px;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            right: -5px;
+            font-size: 3em;
+            color: rgba(0, 180, 216, 0.2);
+            font-family: Arial;
+        }
+    </style>
+</div>
+        </div>
+        
+        <p class="footer-date" style="text-align: center; color: #00b4d8; font-size: 0.95rem; margin: 20px 0;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-left: 5px;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+            </svg>
+            تم إنشاء المتجر بتاريخ 23-11-2024
+        </p>
+
+        <div style="display: flex; justify-content: center; margin: 15px auto; max-width: 300px;">
+            <a href="https://wa.me/+201009123031" target="_blank" class="footer-contact" style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                background: rgba(0, 180, 216, 0.1);
+                color: #00b4d8;
+                padding: 12px 20px;
+                border-radius: 25px;
+                text-decoration: none;
+                border: 1px solid rgba(0, 180, 216, 0.3);
+                transition: all 0.3s ease;
+                width: fit-content;
+                opacity: 0.7;
+                margin: 0 auto;
+            ">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                    <path d="M9 21V9"></path>
+                </svg>
+                لشراء موقع حسب طلبك تواصل هنا
+            </a>
+        </div>
     </div>
 </footer>
 
-<a href="https://wa.me/+201009123031" target="_blank" class="whatsapp-float" title="تواصل معنا على واتساب">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+<a href="https://wa.me/+201009123031" target="_blank" class="whatsapp-float" title="تواصل معنا على واتساب" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366, #128C7E);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" style="
+        width: 32px;
+        height: 32px;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        transition: transform 0.3s ease;
+    ">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
     </svg>
 </a>
 
@@ -2208,7 +2426,6 @@ function goBack() {
 function closeModal() {
     Swal.close();
     modalHistory = [];
-    document.body.style.overflow = 'auto';
 }
 
 function showIdModal() {
@@ -2276,7 +2493,7 @@ function showPaymentDetails(method) {
                         <span>رقم التحويل:</span>
                         <span style="color: #00b4d8; font-weight: bold;">01009123031</span>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="2">
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                     </svg>
@@ -2560,12 +2777,20 @@ function decreaseQuantity() {
 
 function updateStatusIndicator() {
     const statusIndicator = document.getElementById('statusIndicator');
-    const currentHour = new Date().getHours();
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMinutes = now.getMinutes();
+    const currentTime = currentHour + (currentMinutes / 60);
 
-    if (currentHour >= 7 && currentHour < 24) {
-        statusIndicator.style.backgroundColor = '#4CAF50';
+    // Store time boundaries
+    const startTime = 8; // 8:00 AM
+    const endTime = 23.5; // 11:30 PM
+
+    // Check if current time is within working hours
+    if (currentTime >= startTime && currentTime < endTime) {
+        statusIndicator.style.backgroundColor = '#4CAF50'; // Green
     } else {
-        statusIndicator.style.backgroundColor = '#e63946';
+        statusIndicator.style.backgroundColor = '#e63946'; // Red
     }
 }
 
@@ -2688,53 +2913,6 @@ function showTutorial() {
     
     showModal(content, false);
 }
-
-function showWorkHours() {
-    const content = `
-        <div class="fullscreen-modal work-hours-modal">
-            <h2 style="color: #00b4d8; margin-bottom: 30px;">مواعيد العمل</h2>
-            
-            <div class="work-hours-container">
-                <div class="work-hours-card">
-                    <div class="work-hours-header">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                        <span>ساعات العمل اليومية</span>
-                    </div>
-                    <div class="work-hours-content">
-                        <div class="time-slot active">
-                            <div class="time-info">
-                                <span class="time">7:00 صباحاً - 12:00 منتصف الليل</span>
-                                <span class="status">متاح</span>
-                            </div>
-                        </div>
-                        <div class="time-slot inactive">
-                            <div class="time-info">
-                                <span class="time">12:00 منتصف الليل - 7:00 صباحاً</span>
-                                <span class="status">مغلق</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-note">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="12" y1="8" x2="12" y2="12"/>
-                        <line x1="12" y1="16" x2="12.01" y2="16"/>
-                    </svg>
-                    <span>نعمل يومياً بما في ذلك العطلات والإجازات الرسمية</span>
-                </div>
-            </div>
-            
-            <button onclick="closeModal()" class="close-hours-btn">إغلاق</button>
-        </div>
-    `;
-    
-    showModal(content, false);
-}
 </script>
-</body>
-</html>
+
+</body></html>
